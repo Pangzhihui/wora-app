@@ -1,21 +1,35 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>
-      About WORA-APP
-    </ion-title>
+    <ion-title>最热电影</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
 
-<p>
-  An App that Write Once, Run Anywhere.
-</p>
+<!-- ion-card *ngFor="let post of posts">
 
-<p>
-  <a href="https://github.com/BUPT-CAD/wora-app">
-    https://github.com/BUPT-CAD/wora-app
-  </a>
-</p>
+  <ion-card-content
+    [innerHTML]="post.description"
+  >
+  </ion-card-content>
+
+</ion-card -->
+
+<ion-list>
+  <button
+    ion-item
+    *ngFor="let film of (films | async)?.subjects"
+  >
+  	<div style="float:left">
+  		<img src="{{film.images.small}}">
+  	</div>
+  	<div style="float:left;margin-left:20px;">
+    	<p style="font-size: 18px;font-weight: 700;">{{ film.title }}</p>
+    	<p style="margin-top: 10px;">豆瓣评分：{{ film.rating.average }}</p>
+    	<p style="margin-top: 10px;;">年份：{{ film.year }}</p>
+    	<p style="margin-top: 10px;;">类型：{{ film.genres }}</p>
+    </div>
+  </button>
+</ion-list>
 
 </ion-content>

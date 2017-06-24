@@ -36,8 +36,7 @@ export class HomePage {
   ngOnInit() {
     // this.initBuptBbsRss()
 
-    this.films = this.http.get('http://swapi.co/api/films')
-                          .map(res => res.json());
+    this.films = this.http.get('http://m.maoyan.com/movie/list.json?type=hot&offset=0&limit=20').map(res => res.json());
   }
 
   openDetails(film) {

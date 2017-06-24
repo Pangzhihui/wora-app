@@ -7,7 +7,7 @@
 <ion-header>
 
   <ion-navbar color="primary">
-    <ion-title>{{ film.title }}</ion-title>
+    <ion-title>{{ film.nm }}</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -17,7 +17,17 @@
 
   <ion-card>
     <ion-card-content>
-      {{ film.opening_crawl }}
+      <img src="{{ film.img }}">
+      <br>
+      <p style="font-size: 18px;font-weight: 700;">{{film.nm}}</p>
+      <p>首映：{{film.rt}}</p>
+      <p>类型：{{film.cat}}</p>
+      <p>版本：{{film.ver}}</p>
+      <p>时长：{{film.dur}}</p>
+      <p>导演：{{film.dir}}</p>
+      <p>主演：{{film.star}}</p>
+      <p>评分：{{film.sc}}</p>
+
     </ion-card-content>
   </ion-card>
 
